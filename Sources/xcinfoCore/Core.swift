@@ -494,7 +494,7 @@ extension Core {
     func selectXcode(at url: URL, password: String) throws {
         environment.logger.log("Selecting Xcode...")
         let result = Shell.executePrivileged(command: "xcode-select", password: password, args: ["-s", url.path])
-            .exitStatus
+        
 
         guard result == EXIT_SUCCESS else {
             environment.logger.log("Selecting Xcode \("✗".red)", onSameLine: true)
